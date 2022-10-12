@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class UsingStrings {
     public static void creating() {
         // String Literal
@@ -38,7 +40,48 @@ public class UsingStrings {
         if (testStr.isEmpty()) {
             System.out.println("Uh oh. The testStr is empty!");
         } else {
-            System.out.printf("%s is %d characters long.", testStr, testStrLength);
+            // split
+            String[] words = testStr.split(" ");
+
+            System.out.printf("The words in '%s' are:\n", testStr);
+
+            for (int i = 0; i < words.length; i++) {
+                System.out.println(words[i].toUpperCase());
+            }
+
+            // contains
+            System.out.printf("\n%s contains 'World': %b", testStr, testStr.contains("World"));
+
+            // replace (replaceAll will replace all occurrences of the substring)
+            System.out.printf("\nIn '%s', 'l' characters will be replaced with '1' characters: %s", testStr, testStr.replaceAll("l", "1"));
+
+            // equals and toLowerCase
+            System.out.printf("\n%s is the same as %s", testStr, testStr.toLowerCase());
         }
+
+        System.out.printf("\n%s is %d characters long.", testStr, testStrLength);
+    }
+
+    public static void takingInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Who are you?");
+
+        String name = scanner.nextLine();
+
+        System.out.printf("Welcome back, %s! What is your id number?\n", name);
+
+        int id = scanner.nextInt();
+
+        // clears the newline character from the enter key
+        scanner.nextLine();
+
+        System.out.printf("Logged in as User-%d. What is your department name?\n", id);
+
+        String department = scanner.nextLine();
+
+        System.out.printf("Looking up details for %s-%d...", department, id);
+
+        scanner.close();
     }
 }
