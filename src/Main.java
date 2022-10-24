@@ -1,25 +1,12 @@
-import java.time.LocalDate;
-
 public class Main {
     public static void main(String[] args) {
-        /*
-        Without constructor parameters
-        Person testPerson = new Person();
-        testPerson.firstName = "Test";
-        testPerson.lastName = "Person";
-        testPerson.dob = LocalDate.now();
-        */
+        Student kvothe = new Student("Kvothe", "Unknown", 2022, 3.7, "Music");
+        Student simmon = new Student("Simmon", "Unknown", 2024, 4.0, "Alchemy");
 
-        // With Constructor parameters
-        Person testPerson = new Person("Test", "Person", "2022-10-20");
+        simmon.incrementGraduationYear();
 
-        System.out.printf("%s %s", testPerson.firstName, testPerson.lastName);
+        kvothe.printStats();
 
-        testPerson.greet();
-
-        testPerson.greet("World");
-
-        Coder webDev = new Coder("John", "Doe", LocalDate.now().toString(), "JavaScript");
-        webDev.greet();
+        simmon.printStats();
     }
 }
