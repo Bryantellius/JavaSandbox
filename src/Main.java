@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
-        Conditionals.determineQuadrant();
+        Loops.printToN(100);
+        Loops.printEvensFromN(100);
+        Loops.printPatternNToM(1, 10);
     }
 }
