@@ -4,8 +4,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
-        Loops.printToN(100);
-        Loops.printEvensFromN(100);
-        Loops.printPatternNToM(1, 10);
+        double result = Functions.convertKilometerToMile(1);
+        System.out.println(result);
+        result = Functions.convertMileToKilometer(2);
+        System.out.println(result);
     }
 }
